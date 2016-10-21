@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mc.FXMLDocumentController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onFileOpen" text="Open" />
+              <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#onExit" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane prefHeight="305.0" prefWidth="3468.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab closable="false" text="Log">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="logTable" layoutX="-12.0" layoutY="87.0" prefHeight="546.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="logTableTimestampCol" prefWidth="75.0" text="Timestamp" />
+                            <TableColumn fx:id="logTableNameCol" prefWidth="75.0" text="Name" />
+                              <TableColumn fx:id="logTableLevelCol" prefWidth="75.0" text="Level" />
+                              <TableColumn fx:id="logTableMessageCol" prefWidth="515.0" text="Message" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Signals">
+               <content>
+                 <fx:include fx:id="signals" source="Signals.fxml" />
+               </content></Tab>
+            <Tab closable="false" text="IO">
+              <content>
+                 <fx:include fx:id="io" source="IO.fxml" />
+              </content>
+            </Tab>
+            <Tab text="Services">
+              <content>
+                 <fx:include fx:id="services" source="Services.fxml" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>
