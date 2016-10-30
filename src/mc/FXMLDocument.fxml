@@ -59,6 +59,11 @@
                  <fx:include fx:id="services" source="Services.fxml" />
               </content>
             </Tab>
+            <Tab text="History">
+              <content>
+                <fx:include fx:id="history" source="History.fxml" />
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>
